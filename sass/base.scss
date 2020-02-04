@@ -1,0 +1,38 @@
+
+$color-primary: #30282E;
+$color-secondary: #4A2740;
+$color-secondary-light: #7D426B;
+$color-gray: #7D6877;
+$color-gray-light: #C9ABC5;
+$color-gray-light2: #E7BFDB;
+$color-white: #fff;
+$color-black: #000;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem = 10px => 10px/16px * 100 = 62.5%
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $color-primary;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: $color-gray-light;
+}
