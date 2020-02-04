@@ -30,7 +30,7 @@ const displayUser = (user) => {
     .then((data) => {
         console.log(data)
         let date =  moment.utc(data.created_at).local();
-        let newDate = ("date", date.format('MMMM Do YYYY, h:mm:ss a'))
+        let newDate = ("date", date.format('MMMM Do YYYY'))
 
         if (user !== "" && data.message !== "not found") {
             userName.innerHTML = data.name;
