@@ -1,3 +1,6 @@
+
+$bp-medium: 56.25em;   // 900px
+$bp-small: 37.5em;
 // .wrapper {
 //     display: flex;
 //     flex-direction: column;
@@ -10,6 +13,10 @@
     align-items: center;
     padding: 5rem 1.5rem 1.5rem;
     margin-bottom: 7.5rem;
+
+    @media only screen and (max-width: $bp-medium){
+        margin-bottom: 10rem;
+    }
 
     &__logo {
         margin-bottom: 2rem;
@@ -31,6 +38,39 @@
     transition: all .2s ease-in;
     display: none;
     opacity: 0;
+
+    @media only screen and (max-width: $bp-medium){
+        background-color: $color-primary;
+        box-shadow: none;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-username {
+            margin-top: -2rem;
+        }
+
+        &-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 80%;
+            align-items: center;
+            margin-bottom: 1.7rem;
+
+            @media only screen and (max-width: $bp-medium){
+                flex-direction: column;
+            }
+
+            // &:not(:last-child) {
+            //     margin-right: 1.5rem;
+            // }
+        }
+    }
    
     &__pic {
         position: absolute;
@@ -40,7 +80,7 @@
         left: 50%;
         transform: translateX(-50%);
         border-radius: 100%;
-        border: .5rem solid $color-secondary;
+        border: .5rem solid #7D426E;
         margin-bottom: 5rem;
 
         img {
@@ -53,10 +93,18 @@
        
         &-h2 {
             color: $color-secondary;
+
+            @media only screen and (max-width: $bp-medium){
+                color: $color-white;
+            }
         }
 
         &-h3 {
             color: $color-primary;
+
+            @media only screen and (max-width: $bp-medium){
+                color: #7D426E;
+            }
         }
 
         &-properties {
@@ -68,11 +116,19 @@
             h5 {
                 color: $color-secondary-light;
                 margin-left: 1rem;
+
+                @media only screen and (max-width: $bp-medium){
+                    color: rgba($color-white, .9)
+                }
             }
 
             i {
                 color: $color-secondary-light;
                 line-height: 2rem;
+
+                @media only screen and (max-width: $bp-medium){
+                    color: rgba($color-white, .9)
+                }
             }
         }
     }
@@ -84,6 +140,17 @@
         // align-items: center;
         justify-content: center;
 
+        @media only screen and (max-width: $bp-small){
+            display: grid;
+            grid-template-columns: repeat(2, minmax(100px, 150px));
+            -webkit-box-pack: center;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 0.5rem;
+        }
+
+        
+
         &--box {
             
 
@@ -92,6 +159,10 @@
                 padding: 1rem 3rem;
                 margin-right: .6rem;
                 border-radius: .7rem;
+
+                @media only screen and (max-width: $bp-medium){
+                    background-color: #7D426E;
+                }
                 
                
                h4 {
@@ -111,6 +182,10 @@
                 margin-right: .6rem;
                 border-radius: .7rem;
 
+                @media only screen and (max-width: $bp-medium){
+                    background-color: #7D426E;
+                }
+
                 h4 {
                     font-size: 3.5rem;
                     font-weight: 600;
@@ -127,6 +202,10 @@
                 margin-right: .6rem;
                 border-radius: .7rem;
 
+                @media only screen and (max-width: $bp-medium){
+                    background-color: #7D426E;
+                }
+
                 h4 {
                     font-size: 3.5rem;
                     font-weight: 600;
@@ -141,6 +220,10 @@
                 background-color: $color-primary;
                 padding: 1rem 3rem;
                 border-radius: .7rem;
+
+                @media only screen and (max-width: $bp-medium){
+                    background-color: #7D426E;
+                }
 
                 h4 {
                     font-size: 3.5rem;
@@ -164,6 +247,11 @@
     display: none;
     opacity: 0;
     transition: all .2s ease-in .2s;
+
+    @media only screen and (max-width: $bp-medium){
+        margin-top: 0;
+        padding: 7rem 1rem 5rem;
+    }
 
     &__heading {
         display: block;
