@@ -1,3 +1,7 @@
+// import Swal from "sweetalert2";
+
+// import Swal from "sweetalert2";
+
 const searchValue = document.querySelector("#searchUser");
 const userToggle = document.querySelector(".user");
 const userPic = document.querySelector(".user__pic");
@@ -26,13 +30,19 @@ const client_secret = "ae04e65886341c23e54b689cf446de264521ea2f";
 const displayUser = (user) => {
     
     fetch(`https://api.github.com/users/${user}?client_id=${client_id}&client_secret=${client_secret}`)
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) {
+            throw new Error("HTTP status " + response.status);   
+        }
+        return res.json()
+        
+    })
     .then((data) => {
         console.log(data)
         let date =  moment.utc(data.created_at).local();
         let newDate = ("date", date.format('MMMM Do YYYY'))
 
-        if (user !== "" && data.message !== "not found") {
+        if (user !== "") {
             userName.innerHTML = data.name;
             aliasName.innerHTML = data.login;
             userPic.innerHTML = `<img src="${data.avatar_url}" max-width="100%">`
@@ -44,15 +54,23 @@ const displayUser = (user) => {
             followers.innerHTML = data.followers
             following.innerHTML = data.following
             userToggle.setAttribute("style", "display: block; opacity: 1");
-            reposToggle.setAttribute("style", "display: block; opacity: 1"); 
+            reposToggle.setAttribute("style", "display: block; opacity: 1");
         }else {
             userToggle.setAttribute("style", "display: none; opacity: 0");
             reposToggle.setAttribute("style", "display: none; opacity: 0"); 
+            
         }
         
 
     }).catch(err => {
         console.log(err + "something went wrong")
+        Swal.fire({
+            icon: 'error',
+            title: '<h1>Oops...</h1>',
+            text: 'Something went wrong!',
+            footer: '<h5>maybe user does not exist</h5>'
+            
+          })
         })   
 
     fetch(`https://api.github.com/users/${user}/repos?per_page=12&order=asc?client_id=${client_id}&client_secret=${client_secret}`)
@@ -81,10 +99,10 @@ const displayUser = (user) => {
 
 searchValue.addEventListener("keypress", (e) => {
    
-    if(e.key === 'Enter') {
-    reposContainer.innerHTML = ''
-    displayUser(searchValue.value)
-   }
+    if(e.key === 'Enter') {  
+        reposContainer.innerHTML = ''
+        displayUser(searchValue.value)
+    }
     
 })
 

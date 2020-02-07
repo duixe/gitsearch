@@ -227,6 +227,9 @@ body {
       flex-direction: row;
       justify-content: space-between; }
 
+.swal2-popup {
+  font-size: 1.6rem !important; }
+
 .form {
   width: 37rem; }
   .form__group:not(:last-child) {
