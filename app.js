@@ -1,7 +1,8 @@
 // import Swal from "sweetalert2";
 
 // import Swal from "sweetalert2";
-
+const loader = document.querySelector(".loader");
+const main = document.querySelector(".main");
 const searchValue = document.querySelector("#searchUser");
 const userToggle = document.querySelector(".user");
 const userPic = document.querySelector(".user__pic");
@@ -28,7 +29,10 @@ const client_secret = "ae04e65886341c23e54b689cf446de264521ea2f";
 
 
 const displayUser = (user) => {
+    loader.style.display = "flex";
+    loader.style.opacity = ".35";
     
+  setTimeout(() => {
     fetch(`https://api.github.com/users/${user}?client_id=${client_id}&client_secret=${client_secret}`)
     .then(res => {
         if (!res.ok) {
@@ -55,6 +59,7 @@ const displayUser = (user) => {
             following.innerHTML = data.following
             userToggle.setAttribute("style", "display: block; opacity: 1");
             reposToggle.setAttribute("style", "display: block; opacity: 1");
+            user.value = ''
         }else {
             userToggle.setAttribute("style", "display: none; opacity: 0");
             reposToggle.setAttribute("style", "display: none; opacity: 0"); 
@@ -94,14 +99,29 @@ const displayUser = (user) => {
         });
     }).catch(err => {
         console.log(err)
-    })
+    });
+  }, 600)
+
+    setTimeout(() => {
+        
+        main.style.display = "block";
+        setTimeout(() => {
+            main.style.opacity = "1";
+        }, 300);
+
+        loader.style.opacity = "0";
+        loader.style.display = "none";
+
+
+    }, 4000)
 }
 
 searchValue.addEventListener("keypress", (e) => {
    
     if(e.key === 'Enter') {  
         reposContainer.innerHTML = ''
-        displayUser(searchValue.value)
+        displayUser(searchValue.value);
+        searchValue.value = ''
     }
     
 })
