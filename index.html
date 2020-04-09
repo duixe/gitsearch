@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">       
+        <link rel="stylesheet" href="style.comp.css">
+        <!-- <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.css"> -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+        <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png"> -->
+        
+        <title>search github profile</title>
+    </head>
+    <body>
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="wrapper">
+            <header class="header">
+                <div class="header__logo">
+                    <!-- <i class="fab fa-github-square"></i> -->
+                    <i class="fab fa-github"></i>
+                    <!-- <i class="fab fa-git-alt"></i> -->
+                </div>
+                <div class="form__group">
+                    <input id="searchUser" type="text " placeholder="Find your github profile" class="form__input" name="search" autocorrect="off" spellcheck="false">
+                    <label for="search" class="form__label">Find your github profile</label>
+                </div>
+            </header>
+        </div>
+            <main class="main">
+                <section class="user">
+                    <div class="user__pic">
+                        <!-- <img src="img/user-2.jpg" max-width="100%"> -->
+                    </div>
+                    <div class="user__profile">
+                        <div class="user__container">
+                            <div class="user__container-name"><h2 class="user__profile-h2">name</h2></div>
+                            <div class="user__container-username"><h3 class="user__profile-h3">username</h3></div>
+
+                            <div class="user__container-row">
+                                <div class="user__container--col">
+                                    <div class="user__profile-properties">
+                                        <i class="small material-icons">location_on</i>
+                                        <h5 class="user__profile-town">town</h5>
+                                    </div>
+                                </div>
+                                <div class="user__container--col user__profile-properties">
+                                    <i class="small material-icons">date_range</i>
+                                    <h5 class="user__profile-join">joined</h5>
+                                </div>
+                                <div class="user__container--col user__profile-properties">
+                                    <i class="small material-icons">work</i>
+                                    <h5 class="user__profile-work">work</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user__summary">
+                        <div class="user__summary--box1">
+                            <h4 class="center-align">4</h4>
+                            <h5 class="center-align">public Repos</h5>
+                        </div>
+                        <div class="user__summary--box2">
+                            <h4 class="center-align">4</h4 class="center-align">
+                            <h5 class="center-align">public Gists</h4>
+                        </div>
+                        <div class="user__summary--box3">
+                            <h4 class="center-align">4</h4>
+                            <h5 class="center-align">Followers</h4>
+                        </div>
+                        <div class="user__summary--box4">
+                            <h4 class="center-align">4</h4>
+                            <h5 class="center-align">Following</h4>
+                        </div> 
+                    </div>
+                </section>
+                <section class="repos">
+                    <div class="repos__heading">
+                        <h3>Latest Repos : </h3>
+                    </div>
+                    <div class="repos__container">
+                        <!-- <div class="repos__box">
+                            <h4 class="repos__box-topic">My first kubernates</h4>
+                            <p class="repos__box-desc">this is my first loreLorem ipsum dolor, sit amet</p>
+                            <div class="repos__box-footer">
+                                <span>Forks: </span>
+                                <span>Watchers: </span>
+                                <span>Stars: </span>
+                                <span class="right-align"><a href="#" class="waves-effect red waves-light btn-small">Repo Page</a></span>
+                            </div>
+                        </div>
+
+                        <div class="repos__box">
+                            <h4 class="repos__box-topic">My first kubernates</h4>
+                            <p class="repos__box-desc">this is my first loreLorem ipsum dolor, sit amet</p>
+                            <div class="repos__box-footer">
+                                <span>Forks: </span>
+                                <span>Watchers: </span>
+                                <span>Stars: </span>
+                                <span class="right-align"><a href="#" class="waves-effect red waves-light btn-small">Repo Page</a></span>
+                                
+                            </div>
+                        </div>
+
+                        <div class="repos__box">
+                            <h4 class="repos__box-topic">My first kubernates</h4>
+                            <p class="repos__box-desc">this is my first loreLorem ipsum dolor, sit amet</p>
+                            <div class="repos__box-footer">
+                                <span>Forks: </span>
+                                <span>Watchers: </span>
+                                <span>Stars: </span>
+                                <span class="right-align"><a href="#" class="waves-effect red waves-light btn-small">Repo Page</a></span>
+                            </div>
+                        </div>
+
+                        <div class="repos__box">
+                            <h4 class="repos__box-topic">My first kubernates</h4>
+                            <p class="repos__box-desc">this is my first loreLorem ipsum dolor, sit amet</p>
+                            <div class="repos__box-footer">
+                                <span class="">Forks:</span>
+                                <span class="">Watchers: </span>
+                                <span class="">Stars: </span>
+                                <span class="right-align"><a href="#" class="waves-effect red waves-light btn-small">Repo Page</a></span>
+                            </div>
+                        </div> -->
+                    </div>
+                </section>
+            </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="moment.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
