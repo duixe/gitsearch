@@ -4,6 +4,7 @@
   "description": "A github profile search app using vanilla javascript and the github API",
   "main": "app.js",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "start": "npm-run-all --parallel watch:sass",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
@@ -13,6 +14,7 @@
   },
   "author": "Emmanuel Akomaning",
   "license": "ISC",
+  "homepage": "https://duixe.github.io/gitsearch",
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "concat": "^1.0.3",
