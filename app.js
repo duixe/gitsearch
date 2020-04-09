@@ -78,7 +78,7 @@ const displayUser = (user) => {
           })
         })   
 
-    fetch(`https://api.github.com/users/${user}/repos?per_page=12&order=asc?client_id=${client_id}&client_secret=${client_secret}`)
+    fetch(`https://api.github.com/users/${user}/repos?sort=created&per_page=12&direction=desc?client_id=${client_id}&client_secret=${client_secret}`)
     .then(res => res.json())
     .then((data) => {
         console.log(data)
