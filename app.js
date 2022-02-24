@@ -22,8 +22,8 @@ const reposContainer = document.querySelector(".repos__container");
 
 
 
-const client_id = "777bdbb6d04dc944fee8";
-const client_secret = "ae04e65886341c23e54b689cf446de264521ea2f";
+const client_id = "your github client id";
+const client_secret = "your github client secret";
  
 
 
